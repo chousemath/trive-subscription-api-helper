@@ -17,3 +17,7 @@ tsc test/data/vehicle.ts
 echo "...finished compiling test helper code"
 
 echo "Completely finished with Typescript compilation!"
+
+echo "Running unit tests..."
+npm test
+echo "...finished running all unit tests!"
