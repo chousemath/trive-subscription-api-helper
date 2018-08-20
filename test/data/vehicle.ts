@@ -1,6 +1,6 @@
-import { ModelVehicle } from "../../interfaces/vehicle";
+import { Vehicle } from "../../interfaces/vehicle";
 
-export const goodVehicle: ModelVehicle = {
+export const goodVehicle: Vehicle = {
   id: 1,
   bodyType: 1,
   carType: 1,
@@ -23,7 +23,7 @@ export const goodVehicle: ModelVehicle = {
   year: 1,
 };
 
-export const badVehicles: Array<ModelVehicle> = [
+export const badVehicles: Array<Vehicle> = [
   {
     id: 1,
     bodyType: null,

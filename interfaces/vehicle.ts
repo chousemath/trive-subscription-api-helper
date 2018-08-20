@@ -14,7 +14,7 @@ export const VehicleRequired: Array<string> = [
   'year',
 ];
 
-export interface ModelVehicle {
+export interface Vehicle {
   id?: number; // integer primary key of this vehicle, x
   bodyType: number; // numeric code for the body type of this vehicle, x
   carType: number; // numeric code for the car type of this vehicle (family, luxury, etc.), x
