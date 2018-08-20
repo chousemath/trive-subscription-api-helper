@@ -79,4 +79,25 @@ export const badReports: Array<Report> = [
     title: 'a',
     description: undefined,
   },
+  {
+    userId: NaN,
+    vehicleId: 1,
+    category: 1,
+    title: 'a',
+    description: 'b',
+  },
+  {
+    userId: 1,
+    vehicleId: NaN,
+    category: 1,
+    title: 'a',
+    description: 'b',
+  },
+  {
+    userId: 1,
+    vehicleId: 1,
+    category: NaN,
+    title: 'a',
+    description: 'b',
+  },
 ];
