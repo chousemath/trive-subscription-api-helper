@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+# compile interfaces
+echo "Compiling interfaces..."
+tsc interfaces/vehicle.ts
+echo "...finished compiling interfaces"
+
+# compile main library code
+echo "Compiling main library code..."
+tsc index.ts
+echo "...finished compiling main library code"
+
+# compile test helper code
+echo "Compiling test helper code..."
+tsc test/data/vehicle.ts
+echo "...finished compiling test helper code"
+
+echo "Completely finished with Typescript compilation!"
