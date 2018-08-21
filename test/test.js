@@ -1,12 +1,22 @@
 const mocha = require('mocha');
 const assert = require('assert');
-const { HelperProduct, HelperReport, HelperSubscription, HelperUser, HelperUserImage, HelperUserBillingKey, HelperVehicle } = require('..');
+const {
+  HelperProduct,
+  HelperReport,
+  HelperSubscription,
+  HelperUser,
+  HelperUserImage,
+  HelperUserBillingKey,
+  HelperUserSubscription,
+  HelperVehicle
+} = require('..');
 const { badProducts, goodProduct } = require('./data/product');
 const { badReports, goodReport } = require('./data/report');
 const { badSubscriptions, goodSubscription } = require('./data/subscription');
 const { badUsers, goodUser } = require('./data/user');
 const { badUserImages, goodUserImage } = require('./data/user-image');
 const { badUserBillingKeys, goodUserBillingKey } = require('./data/user-billing-key');
+const { badUserSubscriptions, goodUserSubscription } = require('./data/user-subscription');
 const { badVehicles, goodVehicle } = require('./data/vehicle');
 
 mocha.describe('HelperProduct', () => {
@@ -16,7 +26,6 @@ mocha.describe('HelperProduct', () => {
     });
     mocha.it('should return false when the product is invalid', () => {
       for (let badProduct of badProducts) {
-        console.log(badProduct);
         assert.equal(HelperProduct.valid(badProduct), false);
       }
     });
@@ -83,6 +92,19 @@ mocha.describe('HelperUserBillingKey', () => {
     mocha.it('should return false when the user billing key is invalid', () => {
       for (let badUserBillingKey of badUserBillingKeys) {
         assert.equal(HelperUserBillingKey.valid(badUserBillingKey), false);
+      }
+    });
+  });
+});
+
+mocha.describe('HelperUserSubscription', () => {
+  mocha.describe('#valid()', () => {
+    mocha.it('should return true when the user subscription is valid', () => {
+      assert.equal(HelperUserSubscription.valid(goodUserSubscription), true);
+    });
+    mocha.it('should return false when the user subscription is invalid', () => {
+      for (let badUserSubscription of badUserSubscriptions) {
+        assert.equal(HelperUserSubscription.valid(badUserSubscription), false);
       }
     });
   });

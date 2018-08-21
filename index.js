@@ -7,6 +7,7 @@ var trive_subscription_1 = require("./interfaces/trive-subscription");
 var product_1 = require("./interfaces/product");
 var user_billing_key_1 = require("./interfaces/user-billing-key");
 var user_image_1 = require("./interfaces/user-image");
+var user_subscription_1 = require("./interfaces/user-subscription");
 var notOk = function (value) { return value !== 0 && !value; };
 var HelperProduct;
 (function (HelperProduct) {
@@ -69,6 +70,17 @@ var HelperUserImage;
         return (isJpg + isPng + isJpeg) === -3 ? false : true;
     };
 })(HelperUserImage = exports.HelperUserImage || (exports.HelperUserImage = {}));
+var HelperUserSubscription;
+(function (HelperUserSubscription) {
+    HelperUserSubscription.valid = function (userSubscription) {
+        for (var _i = 0, UserSubscriptionRequired_1 = user_subscription_1.UserSubscriptionRequired; _i < UserSubscriptionRequired_1.length; _i++) {
+            var key = UserSubscriptionRequired_1[_i];
+            if (notOk(userSubscription[key]))
+                return false;
+        }
+        return true;
+    };
+})(HelperUserSubscription = exports.HelperUserSubscription || (exports.HelperUserSubscription = {}));
 var HelperUserBillingKey;
 (function (HelperUserBillingKey) {
     HelperUserBillingKey.valid = function (userBillingKey) {

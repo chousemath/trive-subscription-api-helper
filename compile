@@ -9,6 +9,7 @@ tsc interfaces/trive-subscription.ts
 tsc interfaces/user-image.ts
 tsc interfaces/user.ts
 tsc interfaces/user-billing-key.ts
+tsc interfaces/user-subscription.ts
 tsc interfaces/vehicle.ts
 echo "...finished compiling interfaces"
 
@@ -25,6 +26,7 @@ tsc test/data/subscription.ts
 tsc test/data/user.ts
 tsc test/data/user-image.ts
 tsc test/data/user-billing-key.ts
+tsc test/data/user-subscription.ts
 tsc test/data/vehicle.ts
 echo "...finished compiling test helper code"
 

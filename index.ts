@@ -5,6 +5,7 @@ import { TriveSubscription, SubscriptionRequired } from './interfaces/trive-subs
 import { Product, ProductRequired } from './interfaces/product';
 import { UserBillingKey, UserBillingKeyRequired } from './interfaces/user-billing-key';
 import { UserImage, UserImageRequired } from './interfaces/user-image';
+import { UserSubscription, UserSubscriptionRequired } from './interfaces/user-subscription';
 
 const notOk = (value: number): boolean => value !== 0 && !value;
 
@@ -46,6 +47,13 @@ export namespace HelperUserImage {
     const isJpeg: number = img.indexOf('.jpeg');
     return (isJpg + isPng + isJpeg) === -3 ? false : true;
   }
+}
+
+export namespace HelperUserSubscription {
+  export const valid = (userSubscription: UserSubscription): boolean => {
+    for (let key of UserSubscriptionRequired) if (notOk(userSubscription[key])) return false;
+    return true;
+  };
 }
 
 export namespace HelperUserBillingKey {
