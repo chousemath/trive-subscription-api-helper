@@ -6,8 +6,16 @@ import { Product, ProductRequired } from './interfaces/product';
 import { UserBillingKey, UserBillingKeyRequired } from './interfaces/user-billing-key';
 import { UserImage, UserImageRequired } from './interfaces/user-image';
 import { UserSubscription, UserSubscriptionRequired } from './interfaces/user-subscription';
+import { Payment, PaymentRequired } from './interfaces/payment';
 
 const notOk = (value: number): boolean => value !== 0 && !value;
+
+export namespace HelperPayment {
+  export const valid = (payment: Payment): boolean => {
+    for (let key of PaymentRequired) if (notOk(payment[key])) return false;
+    return true;
+  };
+}
 
 export namespace HelperProduct {
   export const valid = (product: Product): boolean => {

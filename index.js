@@ -8,7 +8,19 @@ var product_1 = require("./interfaces/product");
 var user_billing_key_1 = require("./interfaces/user-billing-key");
 var user_image_1 = require("./interfaces/user-image");
 var user_subscription_1 = require("./interfaces/user-subscription");
+var payment_1 = require("./interfaces/payment");
 var notOk = function (value) { return value !== 0 && !value; };
+var HelperPayment;
+(function (HelperPayment) {
+    HelperPayment.valid = function (payment) {
+        for (var _i = 0, PaymentRequired_1 = payment_1.PaymentRequired; _i < PaymentRequired_1.length; _i++) {
+            var key = PaymentRequired_1[_i];
+            if (notOk(payment[key]))
+                return false;
+        }
+        return true;
+    };
+})(HelperPayment = exports.HelperPayment || (exports.HelperPayment = {}));
 var HelperProduct;
 (function (HelperProduct) {
     HelperProduct.valid = function (product) {
