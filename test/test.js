@@ -1,10 +1,11 @@
 const mocha = require('mocha');
 const assert = require('assert');
-const { HelperProduct, HelperReport, HelperSubscription, HelperUser, HelperUserBillingKey, HelperVehicle } = require('..');
+const { HelperProduct, HelperReport, HelperSubscription, HelperUser, HelperUserImage, HelperUserBillingKey, HelperVehicle } = require('..');
 const { badProducts, goodProduct } = require('./data/product');
 const { badReports, goodReport } = require('./data/report');
 const { badSubscriptions, goodSubscription } = require('./data/subscription');
 const { badUsers, goodUser } = require('./data/user');
+const { badUserImages, goodUserImage } = require('./data/user-image');
 const { badUserBillingKeys, goodUserBillingKey } = require('./data/user-billing-key');
 const { badVehicles, goodVehicle } = require('./data/vehicle');
 
@@ -56,6 +57,19 @@ mocha.describe('HelperUser', () => {
     mocha.it('should return false when the user is invalid', () => {
       for (let badUser of badUsers) {
         assert.equal(HelperUser.valid(badUser), false);
+      }
+    });
+  });
+});
+
+mocha.describe('HelperUserImage', () => {
+  mocha.describe('#valid()', () => {
+    mocha.it('should return true when the user image is valid', () => {
+      assert.equal(HelperUserImage.valid(goodUserImage), true);
+    });
+    mocha.it('should return false when the user image is invalid', () => {
+      for (let badUserImage of badUserImages) {
+        assert.equal(HelperUserImage.valid(badUserImage), false);
       }
     });
   });

@@ -23,6 +23,7 @@ tsc test/data/product.ts
 tsc test/data/report.ts
 tsc test/data/subscription.ts
 tsc test/data/user.ts
+tsc test/data/user-image.ts
 tsc test/data/user-billing-key.ts
 tsc test/data/vehicle.ts
 echo "...finished compiling test helper code"

@@ -4,6 +4,7 @@ import { ReportRequired, Report } from './interfaces/report';
 import { TriveSubscription, SubscriptionRequired } from './interfaces/trive-subscription';
 import { Product, ProductRequired } from './interfaces/product';
 import { UserBillingKey, UserBillingKeyRequired } from './interfaces/user-billing-key';
+import { UserImage, UserImageRequired } from './interfaces/user-image';
 
 const notOk = (value: number): boolean => value !== 0 && !value;
 
@@ -34,6 +35,17 @@ export namespace HelperUser {
     for (let key of UserRequired) if (notOk(user[key])) return false;
     return true;
   };
+}
+
+export namespace HelperUserImage {
+  export const valid = (userImage: UserImage): boolean => {
+    for (let key of UserImageRequired) if (notOk(userImage[key])) return false;
+    const img: string = userImage.license_image.toLowerCase();
+    const isJpg: number = img.indexOf('.jpg');
+    const isPng: number = img.indexOf('.png');
+    const isJpeg: number = img.indexOf('.jpeg');
+    return (isJpg + isPng + isJpeg) === -3 ? false : true;
+  }
 }
 
 export namespace HelperUserBillingKey {

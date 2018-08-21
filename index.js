@@ -6,6 +6,7 @@ var report_1 = require("./interfaces/report");
 var trive_subscription_1 = require("./interfaces/trive-subscription");
 var product_1 = require("./interfaces/product");
 var user_billing_key_1 = require("./interfaces/user-billing-key");
+var user_image_1 = require("./interfaces/user-image");
 var notOk = function (value) { return value !== 0 && !value; };
 var HelperProduct;
 (function (HelperProduct) {
@@ -53,6 +54,21 @@ var HelperUser;
         return true;
     };
 })(HelperUser = exports.HelperUser || (exports.HelperUser = {}));
+var HelperUserImage;
+(function (HelperUserImage) {
+    HelperUserImage.valid = function (userImage) {
+        for (var _i = 0, UserImageRequired_1 = user_image_1.UserImageRequired; _i < UserImageRequired_1.length; _i++) {
+            var key = UserImageRequired_1[_i];
+            if (notOk(userImage[key]))
+                return false;
+        }
+        var img = userImage.license_image.toLowerCase();
+        var isJpg = img.indexOf('.jpg');
+        var isPng = img.indexOf('.png');
+        var isJpeg = img.indexOf('.jpeg');
+        return (isJpg + isPng + isJpeg) === -3 ? false : true;
+    };
+})(HelperUserImage = exports.HelperUserImage || (exports.HelperUserImage = {}));
 var HelperUserBillingKey;
 (function (HelperUserBillingKey) {
     HelperUserBillingKey.valid = function (userBillingKey) {

@@ -5,3 +5,8 @@ var UserImageCategory;
     UserImageCategory[UserImageCategory["LicenseFront"] = 1] = "LicenseFront";
     UserImageCategory[UserImageCategory["LicenseBack"] = 2] = "LicenseBack";
 })(UserImageCategory = exports.UserImageCategory || (exports.UserImageCategory = {}));
+exports.UserImageRequired = [
+    'userId',
+    'category',
+    'license_image',
+];
