@@ -3,6 +3,7 @@ import { User, UserRequired } from './interfaces/user';
 import { ReportRequired, Report } from './interfaces/report';
 import { TriveSubscription, SubscriptionRequired } from './interfaces/trive-subscription';
 import { Product, ProductRequired } from './interfaces/product';
+import { UserBillingKey, UserBillingKeyRequired } from './interfaces/user-billing-key';
 
 const notOk = (value: number): boolean => value !== 0 && !value;
 
@@ -31,6 +32,13 @@ export namespace HelperSubscription {
 export namespace HelperUser {
   export const valid = (user: User): boolean => {
     for (let key of UserRequired) if (notOk(user[key])) return false;
+    return true;
+  };
+}
+
+export namespace HelperUserBillingKey {
+  export const valid = (userBillingKey: UserBillingKey): boolean => {
+    for (let key of UserBillingKeyRequired) if (notOk(userBillingKey[key])) return false;
     return true;
   };
 }

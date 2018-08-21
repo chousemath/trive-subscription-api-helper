@@ -5,6 +5,7 @@ var user_1 = require("./interfaces/user");
 var report_1 = require("./interfaces/report");
 var trive_subscription_1 = require("./interfaces/trive-subscription");
 var product_1 = require("./interfaces/product");
+var user_billing_key_1 = require("./interfaces/user-billing-key");
 var notOk = function (value) { return value !== 0 && !value; };
 var HelperProduct;
 (function (HelperProduct) {
@@ -52,6 +53,17 @@ var HelperUser;
         return true;
     };
 })(HelperUser = exports.HelperUser || (exports.HelperUser = {}));
+var HelperUserBillingKey;
+(function (HelperUserBillingKey) {
+    HelperUserBillingKey.valid = function (userBillingKey) {
+        for (var _i = 0, UserBillingKeyRequired_1 = user_billing_key_1.UserBillingKeyRequired; _i < UserBillingKeyRequired_1.length; _i++) {
+            var key = UserBillingKeyRequired_1[_i];
+            if (notOk(userBillingKey[key]))
+                return false;
+        }
+        return true;
+    };
+})(HelperUserBillingKey = exports.HelperUserBillingKey || (exports.HelperUserBillingKey = {}));
 var HelperVehicle;
 (function (HelperVehicle) {
     HelperVehicle.valid = function (vehicle) {

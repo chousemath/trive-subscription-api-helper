@@ -1,10 +1,11 @@
 const mocha = require('mocha');
 const assert = require('assert');
-const { HelperProduct, HelperReport, HelperSubscription, HelperUser, HelperVehicle } = require('..');
+const { HelperProduct, HelperReport, HelperSubscription, HelperUser, HelperUserBillingKey, HelperVehicle } = require('..');
 const { badProducts, goodProduct } = require('./data/product');
 const { badReports, goodReport } = require('./data/report');
 const { badSubscriptions, goodSubscription } = require('./data/subscription');
 const { badUsers, goodUser } = require('./data/user');
+const { badUserBillingKeys, goodUserBillingKey } = require('./data/user-billing-key');
 const { badVehicles, goodVehicle } = require('./data/vehicle');
 
 mocha.describe('HelperProduct', () => {
@@ -55,6 +56,19 @@ mocha.describe('HelperUser', () => {
     mocha.it('should return false when the user is invalid', () => {
       for (let badUser of badUsers) {
         assert.equal(HelperUser.valid(badUser), false);
+      }
+    });
+  });
+});
+
+mocha.describe('HelperUserBillingKey', () => {
+  mocha.describe('#valid()', () => {
+    mocha.it('should return true when the user billing key is valid', () => {
+      assert.equal(HelperUserBillingKey.valid(goodUserBillingKey), true);
+    });
+    mocha.it('should return false when the user billing key is invalid', () => {
+      for (let badUserBillingKey of badUserBillingKeys) {
+        assert.equal(HelperUserBillingKey.valid(badUserBillingKey), false);
       }
     });
   });
