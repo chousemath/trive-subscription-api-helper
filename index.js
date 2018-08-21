@@ -4,7 +4,19 @@ var vehicle_1 = require("./interfaces/vehicle");
 var user_1 = require("./interfaces/user");
 var report_1 = require("./interfaces/report");
 var trive_subscription_1 = require("./interfaces/trive-subscription");
+var product_1 = require("./interfaces/product");
 var notOk = function (value) { return value !== 0 && !value; };
+var HelperProduct;
+(function (HelperProduct) {
+    HelperProduct.valid = function (product) {
+        for (var _i = 0, ProductRequired_1 = product_1.ProductRequired; _i < ProductRequired_1.length; _i++) {
+            var key = ProductRequired_1[_i];
+            if (notOk(product[key]))
+                return false;
+        }
+        return true;
+    };
+})(HelperProduct = exports.HelperProduct || (exports.HelperProduct = {}));
 var HelperReport;
 (function (HelperReport) {
     HelperReport.valid = function (report) {

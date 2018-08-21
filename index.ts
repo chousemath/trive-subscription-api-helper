@@ -2,8 +2,16 @@ import { Vehicle, VehicleRequired } from './interfaces/vehicle';
 import { User, UserRequired } from './interfaces/user';
 import { ReportRequired, Report } from './interfaces/report';
 import { TriveSubscription, SubscriptionRequired } from './interfaces/trive-subscription';
+import { Product, ProductRequired } from './interfaces/product';
 
 const notOk = (value: number): boolean => value !== 0 && !value;
+
+export namespace HelperProduct {
+  export const valid = (product: Product): boolean => {
+    for (let key of ProductRequired) if (notOk(product[key])) return false;
+    return true;
+  };
+}
 
 export namespace HelperReport {
   export const valid = (report: Report): boolean => {

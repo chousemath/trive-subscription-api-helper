@@ -1,10 +1,25 @@
 const mocha = require('mocha');
 const assert = require('assert');
-const { HelperReport, HelperSubscription, HelperUser, HelperVehicle } = require('..');
+const { HelperProduct, HelperReport, HelperSubscription, HelperUser, HelperVehicle } = require('..');
+const { badProducts, goodProduct } = require('./data/product');
 const { badReports, goodReport } = require('./data/report');
 const { badSubscriptions, goodSubscription } = require('./data/subscription');
 const { badUsers, goodUser } = require('./data/user');
 const { badVehicles, goodVehicle } = require('./data/vehicle');
+
+mocha.describe('HelperProduct', () => {
+  mocha.describe('#valid()', () => {
+    mocha.it('should return true when the product is valid', () => {
+      assert.equal(HelperProduct.valid(goodProduct), true);
+    });
+    mocha.it('should return false when the product is invalid', () => {
+      for (let badProduct of badProducts) {
+        console.log(badProduct);
+        assert.equal(HelperProduct.valid(badProduct), false);
+      }
+    });
+  });
+});
 
 mocha.describe('HelperReport', () => {
   mocha.describe('#valid()', () => {

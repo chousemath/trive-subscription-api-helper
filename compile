@@ -3,6 +3,7 @@
 
 # compile interfaces
 echo "Compiling interfaces..."
+tsc interfaces/product.ts
 tsc interfaces/report.ts
 tsc interfaces/trive-subscription.ts
 tsc interfaces/user-image.ts
@@ -17,6 +18,7 @@ echo "...finished compiling main library code"
 
 # compile test helper code
 echo "Compiling test helper code..."
+tsc test/data/product.ts
 tsc test/data/report.ts
 tsc test/data/subscription.ts
 tsc test/data/user.ts
