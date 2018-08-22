@@ -45,6 +45,17 @@ var HelperReport;
 })(HelperReport = exports.HelperReport || (exports.HelperReport = {}));
 var HelperSubscription;
 (function (HelperSubscription) {
+    HelperSubscription.extract = function (subscription) {
+        return {
+            userId: subscription.userId,
+            vehicleId: subscription.vehicleId,
+            kmPackage: subscription.kmPackage,
+            deliveryOption: subscription.deliveryOption,
+            status: subscription.status,
+            startDate: subscription.startDate,
+            endDate: subscription.endDate
+        };
+    };
     HelperSubscription.valid = function (subscription) {
         for (var _i = 0, SubscriptionRequired_1 = trive_subscription_1.SubscriptionRequired; _i < SubscriptionRequired_1.length; _i++) {
             var key = SubscriptionRequired_1[_i];

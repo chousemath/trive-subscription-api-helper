@@ -32,6 +32,17 @@ export namespace HelperReport {
 }
 
 export namespace HelperSubscription {
+  export const extract = (subscription: TriveSubscription): TriveSubscription => {
+    return {
+      userId: subscription.userId,
+      vehicleId: subscription.vehicleId,
+      kmPackage: subscription.kmPackage,
+      deliveryOption: subscription.deliveryOption,
+      status: subscription.status,
+      startDate: subscription.startDate,
+      endDate: subscription.endDate,
+    };
+  };
   export const valid = (subscription: TriveSubscription): boolean => {
     for (let key of SubscriptionRequired) if (notOk(subscription[key])) return false;
     if (subscription.startDate >= subscription.endDate) return false;

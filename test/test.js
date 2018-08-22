@@ -70,6 +70,13 @@ mocha.describe('HelperSubscription', () => {
         assert.equal(HelperSubscription.valid(badSubscription), false);
       }
     });
+    mocha.it('should extract out only the essential values from a subscription-like object', () => {
+      const extracted = HelperSubscription.extract(goodSubscription);
+      for (let key of Object.keys(goodSubscription)) {
+        if (key === 'id') continue;
+        assert.equal(goodSubscription[key], extracted[key]);
+      }
+    });
   });
 });
 
