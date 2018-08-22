@@ -24,8 +24,6 @@ var DeliveryOption;
     DeliveryOption[DeliveryOption["Delivery"] = 2] = "Delivery";
 })(DeliveryOption = exports.DeliveryOption || (exports.DeliveryOption = {}));
 exports.SubscriptionRequired = [
-    'userId',
-    'vehicleId',
     'kmPackage',
     'deliveryOption',
     'status',

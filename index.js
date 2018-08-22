@@ -47,8 +47,6 @@ var HelperSubscription;
 (function (HelperSubscription) {
     HelperSubscription.extract = function (subscription) {
         return {
-            userId: subscription.userId,
-            vehicleId: subscription.vehicleId,
             kmPackage: subscription.kmPackage,
             deliveryOption: subscription.deliveryOption,
             status: subscription.status,

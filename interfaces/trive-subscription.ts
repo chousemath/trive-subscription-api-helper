@@ -22,8 +22,6 @@ export enum DeliveryOption {
 }
 
 export const SubscriptionRequired: Array<string> = [
-  'userId',
-  'vehicleId',
   'kmPackage',
   'deliveryOption',
   'status',
@@ -33,8 +31,6 @@ export const SubscriptionRequired: Array<string> = [
 
 export interface TriveSubscription {
   id?: number;
-  userId: number;
-  vehicleId: number;
   kmPackage: number; // please refer to the KmPackage enum above
   deliveryOption: number; // please refer to the DeliveryOption enum above
   status: number; // please refer to the SubscriptionStatus enum above

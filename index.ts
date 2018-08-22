@@ -34,8 +34,6 @@ export namespace HelperReport {
 export namespace HelperSubscription {
   export const extract = (subscription: TriveSubscription): TriveSubscription => {
     return {
-      userId: subscription.userId,
-      vehicleId: subscription.vehicleId,
       kmPackage: subscription.kmPackage,
       deliveryOption: subscription.deliveryOption,
       status: subscription.status,

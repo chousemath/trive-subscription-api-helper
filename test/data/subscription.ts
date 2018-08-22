@@ -2,8 +2,6 @@ import { TriveSubscription } from "../../interfaces/trive-subscription";
 
 export const goodSubscription: TriveSubscription = {
   id: 1,
-  userId: 1,
-  vehicleId: 1,
   kmPackage: 1,
   deliveryOption: 1,
   status: 1,
@@ -13,62 +11,6 @@ export const goodSubscription: TriveSubscription = {
 
 export const badSubscriptions: Array<TriveSubscription> = [
   {
-    userId: null,
-    vehicleId: 1,
-    kmPackage: 1,
-    deliveryOption: 1,
-    status: 1,
-    startDate: 1,
-    endDate: 2,
-  },
-  {
-    userId: undefined,
-    vehicleId: 1,
-    kmPackage: 1,
-    deliveryOption: 1,
-    status: 1,
-    startDate: 1,
-    endDate: 2,
-  },
-  {
-    userId: NaN,
-    vehicleId: 1,
-    kmPackage: 1,
-    deliveryOption: 1,
-    status: 1,
-    startDate: 1,
-    endDate: 2,
-  },
-  {
-    userId: 1,
-    vehicleId: null,
-    kmPackage: 1,
-    deliveryOption: 1,
-    status: 1,
-    startDate: 1,
-    endDate: 2,
-  },
-  {
-    userId: 1,
-    vehicleId: undefined,
-    kmPackage: 1,
-    deliveryOption: 1,
-    status: 1,
-    startDate: 1,
-    endDate: 2,
-  },
-  {
-    userId: 1,
-    vehicleId: NaN,
-    kmPackage: 1,
-    deliveryOption: 1,
-    status: 1,
-    startDate: 1,
-    endDate: 2,
-  },
-  {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: null,
     deliveryOption: 1,
     status: 1,
@@ -76,8 +18,6 @@ export const badSubscriptions: Array<TriveSubscription> = [
     endDate: 2,
   },
   {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: undefined,
     deliveryOption: 1,
     status: 1,
@@ -85,8 +25,6 @@ export const badSubscriptions: Array<TriveSubscription> = [
     endDate: 2,
   },
   {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: NaN,
     deliveryOption: 1,
     status: 1,
@@ -94,8 +32,6 @@ export const badSubscriptions: Array<TriveSubscription> = [
     endDate: 2,
   },
   {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: 1,
     deliveryOption: null,
     status: 1,
@@ -103,8 +39,6 @@ export const badSubscriptions: Array<TriveSubscription> = [
     endDate: 2,
   },
   {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: 1,
     deliveryOption: undefined,
     status: 1,
@@ -112,8 +46,6 @@ export const badSubscriptions: Array<TriveSubscription> = [
     endDate: 2,
   },
   {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: 1,
     deliveryOption: NaN,
     status: 1,
@@ -121,8 +53,6 @@ export const badSubscriptions: Array<TriveSubscription> = [
     endDate: 2,
   },
   {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: 1,
     deliveryOption: 1,
     status: null,
@@ -130,8 +60,6 @@ export const badSubscriptions: Array<TriveSubscription> = [
     endDate: 2,
   },
   {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: 1,
     deliveryOption: 1,
     status: undefined,
@@ -139,8 +67,6 @@ export const badSubscriptions: Array<TriveSubscription> = [
     endDate: 2,
   },
   {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: 1,
     deliveryOption: 1,
     status: NaN,
@@ -148,8 +74,6 @@ export const badSubscriptions: Array<TriveSubscription> = [
     endDate: 2,
   },
   {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: 1,
     deliveryOption: 1,
     status: 1,
@@ -157,8 +81,6 @@ export const badSubscriptions: Array<TriveSubscription> = [
     endDate: 2,
   },
   {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: 1,
     deliveryOption: 1,
     status: 1,
@@ -166,8 +88,6 @@ export const badSubscriptions: Array<TriveSubscription> = [
     endDate: 2,
   },
   {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: 1,
     deliveryOption: 1,
     status: 1,
@@ -175,8 +95,6 @@ export const badSubscriptions: Array<TriveSubscription> = [
     endDate: 2,
   },
   {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: 1,
     deliveryOption: 1,
     status: 1,
@@ -184,8 +102,6 @@ export const badSubscriptions: Array<TriveSubscription> = [
     endDate: null,
   },
   {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: 1,
     deliveryOption: 1,
     status: 1,
@@ -193,8 +109,6 @@ export const badSubscriptions: Array<TriveSubscription> = [
     endDate: undefined,
   },
   {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: 1,
     deliveryOption: 1,
     status: 1,
@@ -202,8 +116,6 @@ export const badSubscriptions: Array<TriveSubscription> = [
     endDate: NaN,
   },
   {
-    userId: 1,
-    vehicleId: 1,
     kmPackage: 1,
     deliveryOption: 1,
     status: 1,
