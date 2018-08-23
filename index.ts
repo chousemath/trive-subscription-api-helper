@@ -58,7 +58,7 @@ export namespace HelperUser {
 export namespace HelperUserImage {
   export const valid = (userImage: UserImage): boolean => {
     for (let key of UserImageRequired) if (notOk(userImage[key])) return false;
-    const img: string = userImage.license_image.toLowerCase();
+    const img: string = userImage.url.toLowerCase();
     const isJpg: number = img.indexOf('.jpg');
     const isPng: number = img.indexOf('.png');
     const isJpeg: number = img.indexOf('.jpeg');

@@ -8,5 +8,5 @@ var UserImageCategory;
 exports.UserImageRequired = [
     'userId',
     'category',
-    'license_image',
+    'url',
 ];

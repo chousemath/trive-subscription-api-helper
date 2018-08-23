@@ -84,7 +84,7 @@ var HelperUserImage;
             if (notOk(userImage[key]))
                 return false;
         }
-        var img = userImage.license_image.toLowerCase();
+        var img = userImage.url.toLowerCase();
         var isJpg = img.indexOf('.jpg');
         var isPng = img.indexOf('.png');
         var isJpeg = img.indexOf('.jpeg');

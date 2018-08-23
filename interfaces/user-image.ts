@@ -6,11 +6,11 @@ export enum UserImageCategory {
 export const UserImageRequired: Array<string> = [
   'userId',
   'category',
-  'license_image',
+  'url',
 ];
 
 export interface UserImage {
   userId: number; // primary key of the user with which this image is associated
   category: number; // numeric representation of the category of this image
-  license_image: string; // url of the image
+  url: string; // url of the image
 }
