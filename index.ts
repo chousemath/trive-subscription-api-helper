@@ -7,6 +7,7 @@ import { UserBillingKey, UserBillingKeyRequired } from './interfaces/user-billin
 import { UserImage, UserImageRequired } from './interfaces/user-image';
 import { UserSubscription, UserSubscriptionRequired } from './interfaces/user-subscription';
 import { Payment, PaymentRequired } from './interfaces/payment';
+import { VehicleSubscription, VehicleSubscriptionRequired } from './interfaces/vehicle-subscription';
 
 const notOk = (value: number): boolean => value !== 0 && !value;
 
@@ -83,6 +84,13 @@ export namespace HelperUserBillingKey {
 export namespace HelperVehicle {
   export const valid = (vehicle: Vehicle): boolean => {
     for (let key of VehicleRequired) if (notOk(vehicle[key])) return false;
+    return true;
+  };
+}
+
+export namespace HelperVehicleSubscription {
+  export const valid = (vehicleSubscription: VehicleSubscription): boolean => {
+    for (let key of VehicleSubscriptionRequired) if (notOk(vehicleSubscription[key])) return false;
     return true;
   };
 }

@@ -12,6 +12,7 @@ tsc interfaces/user.ts
 tsc interfaces/user-billing-key.ts
 tsc interfaces/user-subscription.ts
 tsc interfaces/vehicle.ts
+tsc interfaces/vehicle-subscription.ts
 echo "...finished compiling interfaces"
 
 # compile main library code
@@ -30,6 +31,7 @@ tsc test/data/user-image.ts
 tsc test/data/user-billing-key.ts
 tsc test/data/user-subscription.ts
 tsc test/data/vehicle.ts
+tsc test/data/vehicle-subscription.ts
 echo "...finished compiling test helper code"
 
 echo "Completely finished with Typescript compilation!"

@@ -9,7 +9,8 @@ const {
   HelperUserImage,
   HelperUserBillingKey,
   HelperUserSubscription,
-  HelperVehicle
+  HelperVehicle,
+  HelperVehicleSubscription,
 } = require('..');
 const { badPayments, goodPayment } = require('./data/payment');
 const { badProducts, goodProduct } = require('./data/product');
@@ -20,6 +21,7 @@ const { badUserImages, goodUserImage } = require('./data/user-image');
 const { badUserBillingKeys, goodUserBillingKey } = require('./data/user-billing-key');
 const { badUserSubscriptions, goodUserSubscription } = require('./data/user-subscription');
 const { badVehicles, goodVehicle } = require('./data/vehicle');
+const { badVehicleSubscriptions, goodVehicleSubscription } = require('./data/vehicle-subscription');
 
 mocha.describe('HelperPayment', () => {
   mocha.describe('#valid()', () => {
@@ -140,6 +142,19 @@ mocha.describe('HelperVehicle', () => {
     mocha.it('should return false when the vehicle is not valid', () => {
       for (let badVehicle in badVehicles) {
         assert.equal(HelperVehicle.valid(badVehicle), false);
+      }
+    });
+  });
+});
+
+mocha.describe('HelperVehicleSubscription', () => {
+  mocha.describe('#valid()', () => {
+    mocha.it('should return true when the vehicle subscription is valid', () => {
+      assert.equal(HelperVehicleSubscription.valid(goodVehicleSubscription), true);
+    });
+    mocha.it('should return false when the vehicle subscription is invalid', () => {
+      for (let badVehicleSubscription of badVehicleSubscriptions) {
+        assert.equal(HelperVehicleSubscription.valid(badVehicleSubscription), false);
       }
     });
   });

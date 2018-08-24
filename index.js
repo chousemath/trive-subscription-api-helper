@@ -9,6 +9,7 @@ var user_billing_key_1 = require("./interfaces/user-billing-key");
 var user_image_1 = require("./interfaces/user-image");
 var user_subscription_1 = require("./interfaces/user-subscription");
 var payment_1 = require("./interfaces/payment");
+var vehicle_subscription_1 = require("./interfaces/vehicle-subscription");
 var notOk = function (value) { return value !== 0 && !value; };
 var HelperPayment;
 (function (HelperPayment) {
@@ -124,3 +125,14 @@ var HelperVehicle;
         return true;
     };
 })(HelperVehicle = exports.HelperVehicle || (exports.HelperVehicle = {}));
+var HelperVehicleSubscription;
+(function (HelperVehicleSubscription) {
+    HelperVehicleSubscription.valid = function (vehicleSubscription) {
+        for (var _i = 0, VehicleSubscriptionRequired_1 = vehicle_subscription_1.VehicleSubscriptionRequired; _i < VehicleSubscriptionRequired_1.length; _i++) {
+            var key = VehicleSubscriptionRequired_1[_i];
+            if (notOk(vehicleSubscription[key]))
+                return false;
+        }
+        return true;
+    };
+})(HelperVehicleSubscription = exports.HelperVehicleSubscription || (exports.HelperVehicleSubscription = {}));
