@@ -11,6 +11,7 @@ var user_subscription_1 = require("./interfaces/user-subscription");
 var payment_1 = require("./interfaces/payment");
 var vehicle_subscription_1 = require("./interfaces/vehicle-subscription");
 var vehicle_image_1 = require("./interfaces/vehicle-image");
+var payment_subscription_1 = require("./interfaces/payment-subscription");
 var notOk = function (value) { return value !== 0 && !value; };
 var HelperPayment;
 (function (HelperPayment) {
@@ -23,6 +24,17 @@ var HelperPayment;
         return true;
     };
 })(HelperPayment = exports.HelperPayment || (exports.HelperPayment = {}));
+var HelperPaymentSubscription;
+(function (HelperPaymentSubscription) {
+    HelperPaymentSubscription.valid = function (paymentSubscription) {
+        for (var _i = 0, PaymentSubscriptionRequired_1 = payment_subscription_1.PaymentSubscriptionRequired; _i < PaymentSubscriptionRequired_1.length; _i++) {
+            var key = PaymentSubscriptionRequired_1[_i];
+            if (notOk(paymentSubscription[key]))
+                return false;
+        }
+        return true;
+    };
+})(HelperPaymentSubscription = exports.HelperPaymentSubscription || (exports.HelperPaymentSubscription = {}));
 var HelperProduct;
 (function (HelperProduct) {
     HelperProduct.valid = function (product) {
