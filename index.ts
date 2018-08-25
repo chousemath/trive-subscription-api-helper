@@ -8,6 +8,7 @@ import { UserImage, UserImageRequired } from './interfaces/user-image';
 import { UserSubscription, UserSubscriptionRequired } from './interfaces/user-subscription';
 import { Payment, PaymentRequired } from './interfaces/payment';
 import { VehicleSubscription, VehicleSubscriptionRequired } from './interfaces/vehicle-subscription';
+import { VehicleImage, VehicleImageRequired } from './interfaces/vehicle-image';
 
 const notOk = (value: number): boolean => value !== 0 && !value;
 
@@ -86,6 +87,17 @@ export namespace HelperVehicle {
     for (let key of VehicleRequired) if (notOk(vehicle[key])) return false;
     return true;
   };
+}
+
+export namespace HelperVehicleImage {
+  export const valid = (vehicleImage: VehicleImage): boolean => {
+    for (let key of VehicleImageRequired) if (notOk(vehicleImage[key])) return false;
+    const img: string = vehicleImage.url.toLowerCase();
+    const isJpg: number = img.indexOf('.jpg');
+    const isPng: number = img.indexOf('.png');
+    const isJpeg: number = img.indexOf('.jpeg');
+    return (isJpg + isPng + isJpeg) === -3 ? false : true;
+  }
 }
 
 export namespace HelperVehicleSubscription {

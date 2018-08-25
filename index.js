@@ -10,6 +10,7 @@ var user_image_1 = require("./interfaces/user-image");
 var user_subscription_1 = require("./interfaces/user-subscription");
 var payment_1 = require("./interfaces/payment");
 var vehicle_subscription_1 = require("./interfaces/vehicle-subscription");
+var vehicle_image_1 = require("./interfaces/vehicle-image");
 var notOk = function (value) { return value !== 0 && !value; };
 var HelperPayment;
 (function (HelperPayment) {
@@ -125,6 +126,21 @@ var HelperVehicle;
         return true;
     };
 })(HelperVehicle = exports.HelperVehicle || (exports.HelperVehicle = {}));
+var HelperVehicleImage;
+(function (HelperVehicleImage) {
+    HelperVehicleImage.valid = function (vehicleImage) {
+        for (var _i = 0, VehicleImageRequired_1 = vehicle_image_1.VehicleImageRequired; _i < VehicleImageRequired_1.length; _i++) {
+            var key = VehicleImageRequired_1[_i];
+            if (notOk(vehicleImage[key]))
+                return false;
+        }
+        var img = vehicleImage.url.toLowerCase();
+        var isJpg = img.indexOf('.jpg');
+        var isPng = img.indexOf('.png');
+        var isJpeg = img.indexOf('.jpeg');
+        return (isJpg + isPng + isJpeg) === -3 ? false : true;
+    };
+})(HelperVehicleImage = exports.HelperVehicleImage || (exports.HelperVehicleImage = {}));
 var HelperVehicleSubscription;
 (function (HelperVehicleSubscription) {
     HelperVehicleSubscription.valid = function (vehicleSubscription) {
