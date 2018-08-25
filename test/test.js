@@ -137,6 +137,14 @@ mocha.describe('HelperUserSubscription', () => {
 });
 
 mocha.describe('HelperVehicle', () => {
+  mocha.describe('#convertFeatures()', () => {
+    mocha.it('should return an array of numbers if there is a string input', () => {
+      const results = HelperVehicle.convertFeatures('1,2,3');
+      assert.equal(results[0], 1);
+      assert.equal(results[1], 2);
+      assert.equal(results[2], 3);
+    });
+  });
   mocha.describe('#valid()', () => {
     mocha.it('should return true when the vehicle is valid', () => {
       assert.equal(HelperVehicle.valid(goodVehicle), true);

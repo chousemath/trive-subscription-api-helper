@@ -83,6 +83,9 @@ export namespace HelperUserBillingKey {
 }
 
 export namespace HelperVehicle {
+  export const convertFeatures = (features: string): Array<number> => {
+    return features ? features.split(',').map(x => parseInt(x, 10)) : [];
+  };
   export const valid = (vehicle: Vehicle): boolean => {
     for (let key of VehicleRequired) if (notOk(vehicle[key])) return false;
     return true;

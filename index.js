@@ -117,6 +117,9 @@ var HelperUserBillingKey;
 })(HelperUserBillingKey = exports.HelperUserBillingKey || (exports.HelperUserBillingKey = {}));
 var HelperVehicle;
 (function (HelperVehicle) {
+    HelperVehicle.convertFeatures = function (features) {
+        return features ? features.split(',').map(function (x) { return parseInt(x, 10); }) : [];
+    };
     HelperVehicle.valid = function (vehicle) {
         for (var _i = 0, VehicleRequired_1 = vehicle_1.VehicleRequired; _i < VehicleRequired_1.length; _i++) {
             var key = VehicleRequired_1[_i];
