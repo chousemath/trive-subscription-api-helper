@@ -144,6 +144,10 @@ mocha.describe('HelperVehicle', () => {
       assert.equal(results[1], 2);
       assert.equal(results[2], 3);
     });
+    mocha.it('should return an empty array if the input is falsey', () => {
+      const results = HelperVehicle.convertFeatures(null);
+      assert.equal(results.length, 0);
+    });
   });
   mocha.describe('#valid()', () => {
     mocha.it('should return true when the vehicle is valid', () => {
