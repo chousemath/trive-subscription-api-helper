@@ -2,6 +2,7 @@ const mocha = require('mocha');
 const assert = require('assert');
 const {
   HelperPayment,
+  HelperPaymentProduct,
   HelperPaymentSubscription,
   HelperProduct,
   HelperReport,
@@ -15,6 +16,7 @@ const {
   HelperVehicleSubscription,
 } = require('..');
 const { badPayments, goodPayment } = require('./data/payment');
+const { badPaymentProducts, goodPaymentProduct } = require('./data/payment-product');
 const { badPaymentSubscriptions, goodPaymentSubscription } = require('./data/payment-subscription');
 const { badProducts, goodProduct } = require('./data/product');
 const { badReports, goodReport } = require('./data/report');
@@ -35,6 +37,19 @@ mocha.describe('HelperPayment', () => {
     mocha.it('should return false when the payment is invalid', () => {
       for (let badPayment of badPayments) {
         assert.equal(HelperPayment.valid(badPayment), false);
+      }
+    });
+  });
+});
+
+mocha.describe('HelperPaymentProduct', () => {
+  mocha.describe('#valid()', () => {
+    mocha.it('should return true when the payment product is valid', () => {
+      assert.equal(HelperPaymentProduct.valid(goodPaymentProduct), true);
+    });
+    mocha.it('should return false when the payment product is invalid', () => {
+      for (let badPaymentProduct of badPaymentProducts) {
+        assert.equal(HelperPaymentProduct.valid(badPaymentProduct), false);
       }
     });
   });

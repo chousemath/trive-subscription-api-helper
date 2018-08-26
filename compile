@@ -4,6 +4,7 @@
 # compile interfaces
 echo "Compiling interfaces..."
 tsc interfaces/payment.ts
+tsc interfaces/payment-product.ts
 tsc interfaces/payment-subscription.ts
 tsc interfaces/product.ts
 tsc interfaces/report.ts
@@ -25,6 +26,7 @@ echo "...finished compiling main library code"
 # compile test helper code
 echo "Compiling test helper code..."
 tsc test/data/payment.ts
+tsc test/data/payment-product.ts
 tsc test/data/payment-subscription.ts
 tsc test/data/product.ts
 tsc test/data/report.ts

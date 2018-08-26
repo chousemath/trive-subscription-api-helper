@@ -10,12 +10,20 @@ import { Payment, PaymentRequired } from './interfaces/payment';
 import { VehicleSubscription, VehicleSubscriptionRequired } from './interfaces/vehicle-subscription';
 import { VehicleImage, VehicleImageRequired } from './interfaces/vehicle-image';
 import { PaymentSubscription, PaymentSubscriptionRequired } from './interfaces/payment-subscription';
+import { PaymentProduct, PaymentProductRequired } from './interfaces/payment-product';
 
 const notOk = (value: number): boolean => value !== 0 && !value;
 
 export namespace HelperPayment {
   export const valid = (payment: Payment): boolean => {
     for (let key of PaymentRequired) if (notOk(payment[key])) return false;
+    return true;
+  };
+}
+
+export namespace HelperPaymentProduct {
+  export const valid = (paymentProduct: PaymentProduct): boolean => {
+    for (let key of PaymentProductRequired) if (notOk(paymentProduct[key])) return false;
     return true;
   };
 }
