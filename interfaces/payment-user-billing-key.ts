@@ -1,5 +1,4 @@
 export const PaymentUserBillingKeyRequired: Array<string> = [
-  'status',
   'paymentId',
   'userBillingKeyId',
 ];
