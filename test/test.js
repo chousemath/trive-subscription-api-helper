@@ -4,6 +4,7 @@ const {
   HelperPayment,
   HelperPaymentProduct,
   HelperPaymentSubscription,
+  HelperPaymentUserBillingKey,
   HelperProduct,
   HelperReport,
   HelperSubscription,
@@ -18,6 +19,7 @@ const {
 const { badPayments, goodPayment } = require('./data/payment');
 const { badPaymentProducts, goodPaymentProduct } = require('./data/payment-product');
 const { badPaymentSubscriptions, goodPaymentSubscription } = require('./data/payment-subscription');
+const { badPaymentUserBillingKeys, goodPaymentUserBillingKey } = require('./data/payment-user-billing-key');
 const { badProducts, goodProduct } = require('./data/product');
 const { badReports, goodReport } = require('./data/report');
 const { badSubscriptions, goodSubscription } = require('./data/subscription');
@@ -63,6 +65,19 @@ mocha.describe('HelperPaymentSubscription', () => {
     mocha.it('should return false when the user subscription is invalid', () => {
       for (let badPaymentSubscription of badPaymentSubscriptions) {
         assert.equal(HelperPaymentSubscription.valid(badPaymentSubscription), false);
+      }
+    });
+  });
+});
+
+mocha.describe('HelperPaymentUserBillingKey', () => {
+  mocha.describe('#valid()', () => {
+    mocha.it('should return true when the payment user billing key is valid', () => {
+      assert.equal(HelperPaymentUserBillingKey.valid(goodPaymentUserBillingKey), true);
+    });
+    mocha.it('should return false when the payment user billing key is invalid', () => {
+      for (let badPaymentUserBillingKey of badPaymentUserBillingKeys) {
+        assert.equal(HelperPaymentUserBillingKey.valid(badPaymentUserBillingKey), false);
       }
     });
   });

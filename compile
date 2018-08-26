@@ -6,6 +6,7 @@ echo "Compiling interfaces..."
 tsc interfaces/payment.ts
 tsc interfaces/payment-product.ts
 tsc interfaces/payment-subscription.ts
+tsc interfaces/payment-user-billing-key.ts
 tsc interfaces/product.ts
 tsc interfaces/report.ts
 tsc interfaces/trive-subscription.ts
@@ -28,6 +29,7 @@ echo "Compiling test helper code..."
 tsc test/data/payment.ts
 tsc test/data/payment-product.ts
 tsc test/data/payment-subscription.ts
+tsc test/data/payment-user-billing-key.ts
 tsc test/data/product.ts
 tsc test/data/report.ts
 tsc test/data/subscription.ts

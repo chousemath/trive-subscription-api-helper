@@ -11,6 +11,7 @@ import { VehicleSubscription, VehicleSubscriptionRequired } from './interfaces/v
 import { VehicleImage, VehicleImageRequired } from './interfaces/vehicle-image';
 import { PaymentSubscription, PaymentSubscriptionRequired } from './interfaces/payment-subscription';
 import { PaymentProduct, PaymentProductRequired } from './interfaces/payment-product';
+import { PaymentUserBillingKey, PaymentUserBillingKeyRequired } from './interfaces/payment-user-billing-key';
 
 const notOk = (value: number): boolean => value !== 0 && !value;
 
@@ -31,6 +32,13 @@ export namespace HelperPaymentProduct {
 export namespace HelperPaymentSubscription {
   export const valid = (paymentSubscription: PaymentSubscription): boolean => {
     for (let key of PaymentSubscriptionRequired) if (notOk(paymentSubscription[key])) return false;
+    return true;
+  };
+}
+
+export namespace HelperPaymentUserBillingKey {
+  export const valid = (paymentUserBillingKey: PaymentUserBillingKey): boolean => {
+    for (let key of PaymentUserBillingKeyRequired) if (notOk(paymentUserBillingKey[key])) return false;
     return true;
   };
 }
