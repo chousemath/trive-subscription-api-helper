@@ -7,6 +7,7 @@ const {
   HelperPaymentUserBillingKey,
   HelperProduct,
   HelperReport,
+  HelperReportFile,
   HelperSubscription,
   HelperUser,
   HelperUserImage,
@@ -22,6 +23,7 @@ const { badPaymentSubscriptions, goodPaymentSubscription } = require('./data/pay
 const { badPaymentUserBillingKeys, goodPaymentUserBillingKey } = require('./data/payment-user-billing-key');
 const { badProducts, goodProduct } = require('./data/product');
 const { badReports, goodReport } = require('./data/report');
+const { badReportFiles, goodReportFile } = require('./data/report-file');
 const { badSubscriptions, goodSubscription } = require('./data/subscription');
 const { badUsers, goodUser } = require('./data/user');
 const { badUserImages, goodUserImage } = require('./data/user-image');
@@ -104,6 +106,19 @@ mocha.describe('HelperReport', () => {
     mocha.it('should return false when the report is invalid', () => {
       for (let badReport of badReports) {
         assert.equal(HelperReport.valid(badReport), false);
+      }
+    });
+  });
+});
+
+mocha.describe('HelperReportFile', () => {
+  mocha.describe('#valid()', () => {
+    mocha.it('should return true when the report file is valid', () => {
+      assert.equal(HelperReportFile.valid(goodReportFile), true);
+    });
+    mocha.it('should return false when the report file is invalid', () => {
+      for (let badReportFile of badReportFiles) {
+        assert.equal(HelperReportFile.valid(badReportFile), false);
       }
     });
   });

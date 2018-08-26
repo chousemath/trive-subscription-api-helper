@@ -9,6 +9,7 @@ tsc interfaces/payment-subscription.ts
 tsc interfaces/payment-user-billing-key.ts
 tsc interfaces/product.ts
 tsc interfaces/report.ts
+tsc interfaces/report-file.ts
 tsc interfaces/trive-subscription.ts
 tsc interfaces/user-image.ts
 tsc interfaces/user.ts
@@ -32,6 +33,7 @@ tsc test/data/payment-subscription.ts
 tsc test/data/payment-user-billing-key.ts
 tsc test/data/product.ts
 tsc test/data/report.ts
+tsc test/data/report-file.ts
 tsc test/data/subscription.ts
 tsc test/data/user.ts
 tsc test/data/user-image.ts

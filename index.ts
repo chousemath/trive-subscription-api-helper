@@ -12,6 +12,7 @@ import { VehicleImage, VehicleImageRequired } from './interfaces/vehicle-image';
 import { PaymentSubscription, PaymentSubscriptionRequired } from './interfaces/payment-subscription';
 import { PaymentProduct, PaymentProductRequired } from './interfaces/payment-product';
 import { PaymentUserBillingKey, PaymentUserBillingKeyRequired } from './interfaces/payment-user-billing-key';
+import { ReportFile, ReportFileRequired } from './interfaces/report-file';
 
 const notOk = (value: number): boolean => value !== 0 && !value;
 
@@ -53,6 +54,13 @@ export namespace HelperProduct {
 export namespace HelperReport {
   export const valid = (report: Report): boolean => {
     for (let key of ReportRequired) if (notOk(report[key])) return false;
+    return true;
+  };
+}
+
+export namespace HelperReportFile {
+  export const valid = (reportFile: ReportFile): boolean => {
+    for (let key of ReportFileRequired) if (notOk(reportFile[key])) return false;
     return true;
   };
 }

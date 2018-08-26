@@ -1,6 +1,6 @@
 {
   "name": "trive-subscription-api-helper",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "A group of helper methods for the Trive subscription api",
   "main": "index.js",
   "scripts": {
